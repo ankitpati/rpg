@@ -12,10 +12,10 @@ size_t lrand(size_t rand, size_t lower, size_t upper)
 }
 
 #define RANDOM_DEVICE "/dev/urandom"
-size_t csprng()
+unsigned char csprng()
 {
     static FILE *fp;
-    size_t number;
+    unsigned char number;
 
     if (!fp && !(fp = fopen(RANDOM_DEVICE, "rb"))) {
         fprintf(stderr, "Could not open " RANDOM_DEVICE "\n");
