@@ -8,7 +8,8 @@
 #define ASCII_READABLE_UPPER 0x7e
 size_t lrand(size_t rand, size_t lower, size_t upper)
 {
-    return rand % (upper - lower + 1) + lower;
+    return lower > upper ? rand % (lower - upper + 1) + upper :
+                           rand % (upper - lower + 1) + lower ;
 }
 
 #define RANDOM_DEVICE "/dev/urandom"
