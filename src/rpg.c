@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 size_t lrand(size_t rand, size_t lower, size_t upper)
 {
@@ -10,9 +11,22 @@ size_t lrand(size_t rand, size_t lower, size_t upper)
                            rand % (upper - lower + 1) + lower ;
 }
 
-#define RANDOM_DEVICE "/dev/urandom"
 unsigned char csprng()
 {
+#ifdef _WIN32
+
+    static int seeded;
+
+    if (!seeded) {
+        srand(time(NULL));
+        seeded = 1;
+    }
+
+    return rand();
+
+#else
+
+#define RANDOM_DEVICE "/dev/urandom"
     static FILE *fp;
     unsigned char number;
 
@@ -27,6 +41,8 @@ unsigned char csprng()
     }
 
     return number;
+
+#endif
 }
 
 #define PRINTABLE_MIN      0x21
