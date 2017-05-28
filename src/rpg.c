@@ -11,6 +11,7 @@ size_t lrand(size_t rand, size_t lower, size_t upper)
                            rand % (upper - lower + 1) + lower ;
 }
 
+#define RANDOM_DEVICE "/dev/urandom"
 unsigned char csprng()
 {
 #ifdef _WIN32
@@ -26,7 +27,6 @@ unsigned char csprng()
 
 #else
 
-#define RANDOM_DEVICE "/dev/urandom"
     static FILE *fp;
     unsigned char number;
 
