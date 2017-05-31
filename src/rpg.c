@@ -48,8 +48,8 @@ size_t csprng(size_t bits)
 
     if (bits_left < bits) {
         ret = buf;
-        ret <<= bits - bits_left;
-        bits = bits - bits_left;
+        bits -= bits_left;
+        ret <<= bits;
 
         if (fread(&buf, sizeof(buf), 1, fp) != 1) {
             fprintf(stderr, "I/O error while reading from " RANDOM_DEVICE "\n");
