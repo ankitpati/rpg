@@ -6,7 +6,7 @@ Generate long and strong passwords.
 ```
 git clone https://github.com/ankitpati/rpg.git
 cd rpg/src
-gcc -O3 -o rpg rpg.c
+cc -O3 -o rpg rpg.c
 strip rpg
 
 ./rpg
