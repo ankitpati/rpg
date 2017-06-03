@@ -25,4 +25,9 @@ clean:
 done:
 	@echo -n
 
+install:
+	@echo Installing...
+	mkdir -p ~/bin/
+	cp rpg ~/bin/
+
 # end of Makefile
