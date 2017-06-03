@@ -11,8 +11,15 @@ make
 ./rpg
 ```
 
+### Installation
+To place the binary into the `bin` directory of the current user,
+
+```
+make && make install
+```
+
 ### Samples
-Place the binary on your `PATH` for easier access.
+Place the binary on your `PATH` for easier access. Refer to “Installation.”
 
 ```
 rpg             # defaults to between 8 and 16 characters
