@@ -12,10 +12,16 @@ make
 ```
 
 ### Installation
-To place the binary into the `bin` directory of the current user,
+To install the binary for the current user,
 
 ```
 make && make install
+```
+
+To install the binary for all users (requires `root`),
+
+```
+make && sudo make install
 ```
 
 ### Samples
