@@ -12,6 +12,7 @@ $(EXECUTABLE): $(OBJECTS)
 	@echo Linking...
 	$(CC) $(OBJECTS) -o $@
 	strip $(EXECUTABLE)
+	chmod 755 rpg
 
 .c.o:
 	@echo Compiling...
