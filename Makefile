@@ -6,6 +6,7 @@ SOURCES    = src/rpg.c
 OBJECTS    = $(SOURCES:.c=.o)
 EXECUTABLE = rpg
 
+.PHONY: all
 all: $(SOURCES) $(EXECUTABLE) done
 
 $(EXECUTABLE): $(OBJECTS)
@@ -18,14 +19,17 @@ $(EXECUTABLE): $(OBJECTS)
 	@echo Compiling...
 	$(CC) $(CFLAGS) $< -o $@
 
+.PHONY: clean
 clean:
 	@echo Cleaning...
 	find . -name "*.o"   -type f -delete
 	find . -name "*.gch" -type f -delete
 
+.PHONY: done
 done:
 	@echo -n
 
+.PHONY: install
 install:
 	@echo Installing...
 ifeq ($(shell id -u), 0)
