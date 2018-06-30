@@ -13,7 +13,7 @@ $(EXECUTABLE): $(OBJECTS)
 	@echo Linking...
 	$(CC) $(OBJECTS) -o $@
 	strip $(EXECUTABLE)
-	chmod 755 rpg
+	chmod 755 $(EXECUTABLE)
 
 .c.o:
 	@echo Compiling...
@@ -34,10 +34,10 @@ install:
 	@echo Installing...
 ifeq ($(shell id -u), 0)
 	mkdir -p /usr/bin/
-	cp rpg /usr/bin/
+	cp $(EXECUTABLE) /usr/bin/
 else
 	mkdir -p ~/bin/
-	cp rpg ~/bin/
+	cp $(EXECUTABLE) ~/bin/
 endif
 
 # end of Makefile
