@@ -14,7 +14,7 @@ size_t bitcount(size_t num)
 
 size_t lrand(size_t rand, size_t lower, size_t upper)
 {
-    return rand % (upper - lower + 1) + lower ;
+    return rand % (upper - lower + 1) + lower;
 }
 
 #define RANDOM_DEVICE "/dev/urandom"
