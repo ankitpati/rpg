@@ -1,7 +1,7 @@
 # Makefile for Random Password Generator
 
 CC         = cc
-CFLAGS     = -c -O3
+CFLAGS     = -c -O3 -march=native
 SOURCES    = src/rpg.c
 OBJECTS    = $(SOURCES:.c=.o)
 EXECUTABLE = rpg
