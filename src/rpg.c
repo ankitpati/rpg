@@ -20,19 +20,6 @@ size_t lrand(size_t rand, size_t lower, size_t upper)
 #define RANDOM_DEVICE "/dev/urandom"
 size_t csprng(size_t bits)
 {
-#ifdef _WIN32
-
-    static int seeded;
-
-    if (!seeded) {
-        srand(time(NULL));
-        seeded = 1;
-    }
-
-    return rand();
-
-#else
-
     static FILE *fp;
     static size_t bits_left, buf;
     size_t ret, shift;
@@ -64,8 +51,6 @@ size_t csprng(size_t bits)
     bits_left -= bits;
 
     return ret;
-
-#endif
 }
 
 #define PRINTABLE_MIN      0x21
