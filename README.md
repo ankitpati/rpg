@@ -4,7 +4,7 @@ Generate long and strong passwords.
 
 ### Kickstart
 ```
-git clone https://github.com/ankitpati/rpg.git
+git clone https://gitlab.com/ankitpati/rpg.git
 cd rpg
 make
 
