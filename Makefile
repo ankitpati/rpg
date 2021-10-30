@@ -2,6 +2,7 @@
 
 CC         = cc
 CFLAGS     = -c -O3 -march=native
+STRIP      = strip
 SOURCES    = src/rpg.c
 OBJECTS    = $(SOURCES:.c=.o)
 EXECUTABLE = rpg
@@ -12,7 +13,7 @@ all: $(SOURCES) $(EXECUTABLE) done
 $(EXECUTABLE): $(OBJECTS)
 	@echo Linking...
 	$(CC) $(OBJECTS) -o $@
-	strip $(EXECUTABLE)
+	$(STRIP) $(EXECUTABLE)
 	chmod 755 $(EXECUTABLE)
 
 .c.o:
