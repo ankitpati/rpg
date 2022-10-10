@@ -2,7 +2,7 @@
 
 Generate long and strong passwords.
 
-### Kickstart
+## Kickstart
 ```
 git clone https://gitlab.com/ankitpati/rpg.git
 cd rpg
@@ -11,7 +11,7 @@ make
 ./rpg
 ```
 
-### Installation
+## Installation
 To install the binary for the current user,
 
 ```
@@ -24,7 +24,7 @@ To install the binary for all users (requires `root`),
 make && sudo make install
 ```
 
-### Samples
+## Samples
 Place the binary on your `PATH` for easier access. Refer to “Installation.”
 
 ```
